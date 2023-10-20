@@ -14,6 +14,10 @@ st.write(
     """
 )
 
+password = st.text_input("Enter secret key:")
+if password != st.secrets['password']:
+    st.stop()
+
 penguine_file = st.file_uploader("Upload your own penguine data")
 
 if penguine_file is None:
